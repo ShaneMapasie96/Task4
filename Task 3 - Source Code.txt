@@ -1,0 +1,23 @@
+Test 1:
+pm.test("Status code is 200", function() {
+    pm.response.to.have.status(200);
+});
+pm.test("Response should be in JSON format", function() {
+    pm.response.to.be.json;
+});
+pm.test("Fact contains the key 'fact'", function() {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('fact');
+});
+
+
+Test 2:
+pm.test("Response time should be less than 500ms", function() {
+    pm.response.to.have.responseTimeLessThan(500);
+});
+
+
+Test 3:
+pm.test("Status code is 404", function() {
+    pm.response.to.have.status(404);
+});
